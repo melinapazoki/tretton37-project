@@ -23,8 +23,66 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+.main_color {
+  color: #63b344;
+}
+.App-link {
+  color: #63b344;
+  font-weight: bold;
+  text-decoration: underline;
+  cursor: pointer;
+}
 
+.searchBar{
+  background-color: #63b344;
+}
+.alphabetStyle{
+  background-color: #63b344;
+  color: white;
+  font-weight: bold;
+  padding: 5px;
+    margin: 5px;
+    border-radius: 15px;
+    font-size: 15px;
+    cursor: pointer;
+    width: 15px;
+    height: 15px;
+    line-height: 15px;
+    text-align: center;
+}
+.alphabetStyle:hover{
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+  font-size: 18px;
+}
+.cardRoot{
+  border: 3px solid transparent;
+}
+.cardRoot:hover{
+  border: 3px solid #63b344;
+  background-color: rgb(241, 241, 241);
+}
+.inputStyle{
+  width: 800px;
 
+}
+.location{
+  position: absolute;
+    margin-top: -50px;
+    background-color:#000000;
+    color: #fff;
+    padding: 10px;
+    border-radius: 0 15px 15px 0;
+}
+.listStyle{
+  width: 100%;
+  max-width: 800px;
+}
+.listItemStyle{
+  background-color:#f1f1f17a;
+  border-bottom: 1px solid #ccc;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
