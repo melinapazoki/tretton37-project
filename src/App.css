@@ -64,7 +64,11 @@
   background-color: rgb(241, 241, 241);
 }
 .inputStyle{
-  width: 800px;
+  min-width: 200px;
+  padding: 2px 4px;
+  display: flex;
+  align-items: center;
+  margin: 10px;
 
 }
 .location{

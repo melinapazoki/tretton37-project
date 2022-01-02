@@ -14,11 +14,11 @@ import Divider from "@mui/material/Divider";
 const CardComponent = ({ coworker }) => {
   const MAX_LENGTH = 100;
   return (
-    <Grid item xs={12} md={3} className="cardRoot1">
+    <Grid item xs={12} md={4} lg={3}>
       <Card className="cardRoot">
         <CardMedia
           component="img"
-          height="180"
+          height="200"
           image={coworker.imagePortraitUrl}
           alt={coworker.name}
         />
