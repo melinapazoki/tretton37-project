@@ -1,0 +1,15 @@
+version: '3.3'
+services:
+  webui:
+    container_name: tretton37-webui
+    image: tretton37-webui:latest
+    build:
+      context: ../
+      dockerfile: ./docker/Dockerfile
+    env_file:
+      - "../.env"
+    volumes:
+      - ../:/data/app/
+    ports:
+      - "3003:3003"
+    restart: always
