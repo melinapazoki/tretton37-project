@@ -10,8 +10,9 @@ const App = () => {
     getCoworkerList();
   }, []);
   const [coworkers, setList] = useState([]);
-  const [officeList, setofficeList] = useState([]);
+  const [officeList, setOfficeList] = useState([]);
   const [gridView, setGridView] = useState(true);
+  const [alphabetFilter, setShowAlphabetFilter] = useState(false);
   const [personSearch, setsearchValue] = useState(true);
   const getCoworkerList = async () => {
     const coworkers = await fetchCoworkerList();
@@ -22,7 +23,7 @@ const App = () => {
         : null;
     });
     setList(coworkers);
-    setofficeList(officeList);
+    setOfficeList(officeList);
   };
 
   const onSearch = async (e) => {
@@ -40,14 +41,14 @@ const App = () => {
   const changeGridView = () => {
     setGridView(!gridView);
   };
-  // const onAlphabetSearch = async (e) => {
-  //   const query = e.target.innerHTML;
-  //   const coworkers = await fetchCoworkerList(null, null, query);
-  //   coworkers.filter((item) =>
-  //     item.name.toLowerCase().startsWith(e.target.innerHTML.toLowerCase())
-  //   );
-  //   setList(coworkers);
-  // };
+  const onAlphabetSearch = async (e) => {
+    const query = e.target.innerHTML;
+    const coworkers = await fetchCoworkerList(null, null, query);
+    coworkers.filter((item) =>
+      item.name.toLowerCase().startsWith(e.target.innerHTML.toLowerCase())
+    );
+    setList(coworkers);
+  };
   const handlesearchOffice = (e) => {
     const searchResult = coworkers.filter((item) => {
       return (
@@ -55,6 +56,9 @@ const App = () => {
       );
     });
     setList(searchResult);
+  };
+  const showFilter = () => {
+    setShowAlphabetFilter(!alphabetFilter);
   };
   return (
     <Grid container spacing={4}>
@@ -67,11 +71,14 @@ const App = () => {
           changeSearchValue={changeSearchValue}
           handlesearchOffice={handlesearchOffice}
           officeList={officeList}
+          showFilter={showFilter}
         />
       </Grid>
-      {/* <Grid item xs={12}>
-        <AlphabetFilter onAlphabetSearch={onAlphabetSearch} />
-      </Grid> */}
+      {alphabetFilter && (
+        <Grid item xs={12}>
+          <AlphabetFilter onAlphabetSearch={onAlphabetSearch} />
+        </Grid>
+      )}
       <Grid item xs={12}>
         <SearchResultList coworkers={coworkers} gridView={gridView} />
       </Grid>

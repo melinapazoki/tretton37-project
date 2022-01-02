@@ -1,4 +1,5 @@
 import Grid from "@mui/material/Grid";
+
 const AlphabetFilter = ({ onAlphabetSearch }) => {
   const alphabetList = [
     "a",
@@ -39,7 +40,7 @@ const AlphabetFilter = ({ onAlphabetSearch }) => {
       {alphabetList.map((a) => {
         return (
           <span className="alphabetStyle" key={a} onClick={onAlphabetSearch}>
-            {a}
+            {a.toUpperCase()}
           </span>
         );
       })}

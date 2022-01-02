@@ -24,6 +24,7 @@ const SearchBar = ({
   personSearch,
   handlesearchOffice,
   officeList,
+  showFilter,
 }) => {
   const theme = useTheme();
   const mdMatches = useMediaQuery(theme.breakpoints.up("md"));
@@ -37,7 +38,7 @@ const SearchBar = ({
       <Grid item xs={12}>
         <Paper component="form" className="inputStyle">
           <Tooltip title="Search By Alphabet">
-            <IconButton aria-label="Alphabet filter">
+            <IconButton aria-label="Alphabet filter" onClick={showFilter}>
               <AbcIcon />
             </IconButton>
           </Tooltip>
