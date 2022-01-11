@@ -1,6 +1,3 @@
-import * as React from "react";
-import useMediaQuery from "@mui/material/useMediaQuery";
-import { useTheme } from "@mui/material/styles";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
 import InputBase from "@mui/material/InputBase";
@@ -26,8 +23,6 @@ const SearchBar = ({
   officeList,
   showFilter,
 }) => {
-  const theme = useTheme();
-  const mdMatches = useMediaQuery(theme.breakpoints.up("md"));
   return (
     <Grid
       container
@@ -48,31 +43,33 @@ const SearchBar = ({
             </IconButton>
           </Tooltip>
           <Tooltip title="Change Search Option">
-            <IconButton aria-label="Search" onClick={changeSearchValue}>
+            <IconButton aria-label="Search option" onClick={changeSearchValue}>
               {personSearch ? <PersonSearchIcon /> : <HomeWorkIcon />}
             </IconButton>
           </Tooltip>
           {personSearch ? (
             <InputBase
+              data-testid="search-by-employee"
               placeholder="Search By Employee"
               inputProps={{ "aria-label": "Search" }}
               onChange={onSearch}
-              sx={mdMatches && { width: 800, p: 1.5 }}
             />
           ) : (
-            <FormControl sx={mdMatches && { width: 800 }}>
+            <FormControl>
               <Select
+                data-testid="search-by-office"
                 placeholder="Search By Office"
                 onChange={handlesearchOffice}
                 inputProps={{ "aria-label": "Office Search" }}
               >
-                {officeList.map((item, index) => {
-                  return (
-                    <MenuItem key={index} value={item}>
-                      {item}
-                    </MenuItem>
-                  );
-                })}
+                {Array.isArray(officeList) &&
+                  officeList.map((item, index) => {
+                    return (
+                      <MenuItem key={index} value={item}>
+                        {item}
+                      </MenuItem>
+                    );
+                  })}
               </Select>
             </FormControl>
           )}
