@@ -1,7 +1,7 @@
 import Grid from "@mui/material/Grid";
 import CardComponent from "./CardComponent";
 import ListComponent from "./ListComponent";
-
+import DataNotAvailable from "./DataNotAvailable";
 const SearchResultList = ({ coworkers, gridView }) => {
   return (
     <Grid
@@ -11,13 +11,17 @@ const SearchResultList = ({ coworkers, gridView }) => {
       alignItems="center"
       spacing={2}
     >
-      {coworkers.map((item) => {
-        return gridView ? (
-          <CardComponent key={item.email} coworker={item} />
-        ) : (
-          <ListComponent key={item.email} coworker={item} />
-        );
-      })}
+      {Array.isArray(coworkers) ? (
+        coworkers.map((item) => {
+          return gridView ? (
+            <CardComponent key={item.id} coworker={item} />
+          ) : (
+            <ListComponent key={item.id} coworker={item} />
+          );
+        })
+      ) : (
+        <DataNotAvailable />
+      )}
     </Grid>
   );
 };
