@@ -1,4 +1,3 @@
-import * as React from "react";
 import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
@@ -10,6 +9,7 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import Divider from "@mui/material/Divider";
+import Link from "@mui/material/Link";
 
 const CardComponent = ({ coworker }) => {
   const MAX_LENGTH = 100;
@@ -19,7 +19,7 @@ const CardComponent = ({ coworker }) => {
         <CardMedia
           component="img"
           height="200"
-          image={coworker.imagePortraitUrl}
+          image={coworker.imagePortraitUrl || "/default.jpg"}
           alt={coworker.name}
         />
         <span className="location">
@@ -28,7 +28,6 @@ const CardComponent = ({ coworker }) => {
             {coworker.office}
           </Typography>
         </span>
-
         <CardContent>
           <Grid container>
             <Grid item xs={10}>
@@ -41,10 +40,10 @@ const CardComponent = ({ coworker }) => {
                     ? coworker.mainText.substring(0, MAX_LENGTH)
                     : "---"
                 }...`}
-                <a className="App-link">{`Read more about ${coworker.name.substr(
+                <Link className="App-link">{`Read more about ${coworker.name.substr(
                   0,
                   coworker.name.indexOf(" ")
-                )}`}</a>
+                )}`}</Link>
               </Typography>
             </Grid>
             <Divider orientation="vertical" variant="middle" flexItem />
