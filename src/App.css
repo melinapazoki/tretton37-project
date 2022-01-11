@@ -37,25 +37,16 @@
   background-color: #63b344;
 }
 .alphabetStyle{
-  background-color: #63b344;
-  color: white;
-  font-weight: bold;
-  padding: 5px;
-    margin: 5px;
-    border-radius: 15px;
-    font-size: 15px;
+
+  color: rgb(0, 0, 0);
+  padding: 10px;
+    font-size: 16px;
     cursor: pointer;
     width: 15px;
-    height: 15px;
-    line-height: 15px;
     text-align: center;
+    border-right: 1px solid #63b344;
 }
-.alphabetStyle:hover{
-  width: 25px;
-  height: 25px;
-  line-height: 25px;
-  font-size: 18px;
-}
+
 .cardRoot{
   border: 3px solid transparent;
 }
@@ -86,6 +77,14 @@
 .listItemStyle{
   background-color:#f1f1f17a;
   border-bottom: 1px solid #ccc;
+}
+.pathStyle{
+  padding: 10px;
+  background-color:#f1f1f17a ;
+}
+.subPath{
+  font-weight: bold;
+  color:  #63b344;
 }
 @keyframes App-logo-spin {
   from {
