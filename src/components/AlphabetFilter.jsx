@@ -1,3 +1,4 @@
+import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
 
 const AlphabetFilter = ({ onAlphabetSearch }) => {
@@ -28,6 +29,7 @@ const AlphabetFilter = ({ onAlphabetSearch }) => {
     "x",
     "y",
     "z",
+    "all",
   ];
   return (
     <Grid
@@ -37,11 +39,11 @@ const AlphabetFilter = ({ onAlphabetSearch }) => {
       alignItems="center"
       spacing={4}
     >
-      {alphabetList.map((a) => {
+      {alphabetList.map((a, index) => {
         return (
-          <span className="alphabetStyle" key={a} onClick={onAlphabetSearch}>
+          <Button variant="text" key={index} onClick={onAlphabetSearch}>
             {a.toUpperCase()}
-          </span>
+          </Button>
         );
       })}
     </Grid>
