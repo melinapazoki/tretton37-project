@@ -33,7 +33,7 @@ or
 
   ## useful Hints
 
-  - All the environment variables resided in .env file in root directory.
+  - All the environment variables are in .env file in the root directory.
   - because of CORS API issue ( do not know which port is open), please follow as blow to run api
     - go to browsers and use this URL `https://cors-anywhere.herokuapp.com/https://api.1337co.de/v3/employees/`
     - click on the following button `Request temporary access to the demo server`
@@ -62,4 +62,6 @@ the things which I did for accessability:
 - Use role for tags
 - ...
 
-  --- there is one file attachment in the mail which I explain more about each items.
+## test
+
+some small unit test did by jest.
