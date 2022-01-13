@@ -49,13 +49,13 @@ const CardComponent = ({ coworker }) => {
             <Divider orientation="vertical" variant="middle" flexItem />
             <Grid item xs={1}>
               <>
-                <IconButton edge="end" aria-label="Instagram">
+                <IconButton edge="end" role="button" aria-label="Instagram">
                   <InstagramIcon />
                 </IconButton>
-                <IconButton edge="end" aria-label="GitHub">
+                <IconButton edge="end" role="button" aria-label="GitHub">
                   <GitHubIcon />
                 </IconButton>
-                <IconButton edge="end" aria-label="Linkedin">
+                <IconButton edge="end" role="button" aria-label="Linkedin">
                   <LinkedInIcon />
                 </IconButton>
               </>

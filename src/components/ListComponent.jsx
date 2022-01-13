@@ -17,13 +17,13 @@ const ListComponent = ({ coworker }) => {
         className="listItemStyle"
         secondaryAction={
           <>
-            <IconButton edge="end" aria-label="Instagram">
+            <IconButton role="button" aria-label="Instagram">
               <InstagramIcon />
             </IconButton>
-            <IconButton edge="end" aria-label="GitHub">
+            <IconButton role="button" aria-label="GitHub">
               <GitHubIcon />
             </IconButton>
-            <IconButton edge="end" aria-label="GitHub">
+            <IconButton role="button" aria-label="GitHub">
               <LinkedInIcon />
             </IconButton>
           </>

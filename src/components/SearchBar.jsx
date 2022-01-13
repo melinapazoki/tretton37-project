@@ -33,17 +33,35 @@ const SearchBar = ({
       <Grid item xs={12}>
         <Paper component="form" className="inputStyle">
           <Tooltip title="Search By Alphabet">
-            <IconButton aria-label="Alphabet filter" onClick={showFilter}>
+            <IconButton
+              aria-label="Alphabet filter"
+              role="button"
+              onClick={showFilter}
+              onKeyDown={showFilter}
+              tabindex="0"
+            >
               <AbcIcon />
             </IconButton>
           </Tooltip>
           <Tooltip title="Change Grid View">
-            <IconButton aria-label="Grid View" onClick={changeGridView}>
+            <IconButton
+              aria-label="Grid View"
+              role="button"
+              onClick={changeGridView}
+              onKeyDown={changeGridView}
+              tabindex="1"
+            >
               {gridView ? <GridViewIcon /> : <SplitscreenIcon />}
             </IconButton>
           </Tooltip>
           <Tooltip title="Change Search Option">
-            <IconButton aria-label="Search option" onClick={changeSearchValue}>
+            <IconButton
+              aria-label="Search option"
+              role="button"
+              onClick={changeSearchValue}
+              onKeyDown={changeSearchValue}
+              tabindex="2"
+            >
               {personSearch ? <PersonSearchIcon /> : <HomeWorkIcon />}
             </IconButton>
           </Tooltip>

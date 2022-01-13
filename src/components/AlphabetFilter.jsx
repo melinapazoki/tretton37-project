@@ -41,7 +41,12 @@ const AlphabetFilter = ({ onAlphabetSearch }) => {
     >
       {alphabetList.map((a, index) => {
         return (
-          <Button variant="text" key={index} onClick={onAlphabetSearch}>
+          <Button
+            variant="text"
+            role="button"
+            key={index}
+            onClick={onAlphabetSearch}
+          >
             {a.toUpperCase()}
           </Button>
         );
