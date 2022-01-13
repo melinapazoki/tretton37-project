@@ -16,13 +16,14 @@ export const fetchResponse = async (url, Method) => {
       const response = await result.json().catch(() => {
         handleError();
       });
-      return response.data;
+      return response;
     })
     .catch((e) => {
       handleError(e);
     });
 };
 export const getQuery = (entityURL, start, end, filter) => {
+  // if any backend search is enabled
   if (start) entityURL += `?start=${start || 0}`;
   if (end) entityURL += `&end=${end}`;
   if (filter) entityURL += `?filter=${filter}`;
