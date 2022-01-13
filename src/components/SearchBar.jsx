@@ -38,7 +38,7 @@ const SearchBar = ({
               role="button"
               onClick={showFilter}
               onKeyDown={showFilter}
-              tabindex="0"
+              tabIndex={0}
             >
               <AbcIcon />
             </IconButton>
@@ -49,7 +49,7 @@ const SearchBar = ({
               role="button"
               onClick={changeGridView}
               onKeyDown={changeGridView}
-              tabindex="1"
+              tabIndex={1}
             >
               {gridView ? <GridViewIcon /> : <SplitscreenIcon />}
             </IconButton>
@@ -60,7 +60,7 @@ const SearchBar = ({
               role="button"
               onClick={changeSearchValue}
               onKeyDown={changeSearchValue}
-              tabindex="2"
+              tabIndex={2}
             >
               {personSearch ? <PersonSearchIcon /> : <HomeWorkIcon />}
             </IconButton>
@@ -79,6 +79,7 @@ const SearchBar = ({
                 placeholder="Search By Office"
                 onChange={handlesearchOffice}
                 inputProps={{ "aria-label": "Office Search" }}
+                className="selectStyle"
               >
                 {Array.isArray(officeList) &&
                   officeList.map((item, index) => {

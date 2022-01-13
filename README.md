@@ -42,7 +42,7 @@ or
 
 - user can see employees with short Description and read more.
 - Users can filter employees by name and see visual data representation.
-- User can choos office and see the employees who work on it.
+- User can choose office and see the employees who work on it.
 - users can change the format of view (Grid view or list view).
 - user can search employees by alphabet.
 
@@ -58,5 +58,8 @@ the things which I did for accessability:
 - Underline links
 - Add text labels
 - user border and change background color when hover on grid.
-- Color combinations to avoid  
-   --- there is one file attachment in the mail which I explain more about each items.
+- Color combinations to avoid (for example Green with black)
+- Use role for tags
+- ...
+
+  --- there is one file attachment in the mail which I explain more about each items.

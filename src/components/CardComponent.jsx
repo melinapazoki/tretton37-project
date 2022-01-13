@@ -24,7 +24,7 @@ const CardComponent = ({ coworker }) => {
         />
         <span className="location">
           <Typography gutterBottom variant="subtitle2">
-            <LocationOnIcon className="main_color" />
+            <LocationOnIcon color="white" />
             {coworker.office}
           </Typography>
         </span>

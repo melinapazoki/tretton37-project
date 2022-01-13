@@ -39,12 +39,11 @@ const App = () => {
       setList(results);
       setShowLoader(false);
     }
-    function getOfficeList() {
-      let officeList = [];
-      originalValue.map((item) => {
-        return !officeList.includes(item.city)
-          ? // ? officeList.push(item.office)
-            officeList.push(item.city)
+    function getOfficeList(value) {
+      const officeList = [];
+      value.map((item) => {
+        return !officeList.includes(item.office)
+          ? officeList.push(item.office)
           : null;
       });
       setOfficeList(officeList);
@@ -62,7 +61,6 @@ const App = () => {
     const query = e.target.innerText.toLowerCase();
     // note: Backend search - if its enable
     // const coworkers = await fetchCoworkerList(null, null, query);
-    debugger;
     const filteredList =
       query === "all"
         ? originalValue
@@ -73,7 +71,9 @@ const App = () => {
   };
   const handlesearchOffice = (e) => {
     const searchResult = originalValue.filter((item) => {
-      return item.city.toLowerCase().indexOf(e.target.value.toLowerCase()) > -1;
+      return (
+        item.office.toLowerCase().indexOf(e.target.value.toLowerCase()) > -1
+      );
     });
     setList(searchResult);
   };
